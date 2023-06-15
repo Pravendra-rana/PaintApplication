@@ -10,12 +10,9 @@
 static const char* vertexShaderSource =
 "#version 330 core\n"
 "layout (location = 0) in vec3 position;\n"
-"uniform mat4 u_projectionMatrix;"
-"uniform mat4 u_viewMatrix;"
-"uniform mat4 u_modelMatrix;"
 "void main()\n"
 "{\n"
-"    gl_Position = u_projectionMatrix *  u_viewMatrix * u_modelMatrix * vec4(position, 1.0);\n"
+"    gl_Position = vec4(position, 1.0);\n"
 "}";
 
 static const char* fragmentShaderSource =
@@ -31,6 +28,10 @@ bool OpenGLWindow::drawCircleMode = false;
 bool OpenGLWindow::drawRectangleMode = false;
 bool OpenGLWindow::drawPolygonMode = false;
 bool OpenGLWindow::highlightMode = false;
+
+GLuint OpenGLWindow::lineCount = 0;
+GLuint OpenGLWindow::circleCount = 0;
+GLuint OpenGLWindow::ractangleCount = 0;
 
 OpenGLWindow::OpenGLWindow(QWidget* parent)
 	: QOpenGLWidget(parent)
@@ -79,10 +80,7 @@ void OpenGLWindow::paintGL()
 	glClearColor(0.23f, 0.38f, 0.47f, 1.0f);
 
 	m_program->bind();
-	m_program->setUniformValue("color", QVector4D(1.0f, 1.0f, 1.0f, 1.0f)); // White color
-	m_program->setUniformValue("u_projectionMatrix", projectionMatrix);
-	m_program->setUniformValue("u_viewMatrix", viewMatrix);
-	m_program->setUniformValue("u_modelMatrix", modelMatrix);
+	m_program->setUniformValue("color", QVector4D(1.0f, 1.0f, 1.0f, 1.0f)); 
 
 	if (!geometryBase.empty())
 	{
@@ -161,9 +159,10 @@ void OpenGLWindow::createLine(QPoint mousePos)
 
 	if (lineVertices.size() % 6 == 0)
 	{
+		lineCount++;
 		geometryBase.push_back(lineVertices);
 	    lineVertices.clear();
-		emit lineCreated("Line");
+		emit lineCreated("Line" + QString::number(lineCount));
 	}
 	update();
 
@@ -204,17 +203,13 @@ void OpenGLWindow::createCircle(QPoint mousePos)
 		}
 
 		geometryBase.push_back(circleVertices);
-
-		/*glBindBuffer(GL_ARRAY_BUFFER, m_Vbo);
-		glBufferData(GL_ARRAY_BUFFER, circleVertices.size() * sizeof(float), circleVertices.data(), GL_DYNAMIC_DRAW);
-		glBindBuffer(GL_ARRAY_BUFFER, 0);*/
-
 		centerSet = false;
 	}
 
 	if (circleVertices.size() == 303)
 	{
-		emit lineCreated("Circle");
+		circleCount++;
+		emit lineCreated("Circle" + QString::number(circleCount));
 	}
 	circleVertices.clear();
 	update();
@@ -253,14 +248,10 @@ void OpenGLWindow::createRectangle(QPoint mousePos)
 		}
 	}
 
-	// Update the buffer data
-	/*glBindBuffer(GL_ARRAY_BUFFER, m_Vbo);
-	glBufferData(GL_ARRAY_BUFFER, rectangleVertices.size() * sizeof(float), rectangleVertices.data(), GL_STATIC_DRAW);
-	glBindBuffer(GL_ARRAY_BUFFER, 0);*/
-
 	if (rectangleVertices.size() % 24 == 0)
 	{
-		emit lineCreated("Rectangle");
+		ractangleCount++;
+		emit lineCreated("Rectangle"+ QString::number(ractangleCount));
 	}
 
 	update();

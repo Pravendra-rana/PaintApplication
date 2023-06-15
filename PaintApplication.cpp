@@ -6,6 +6,7 @@
 #include <QTreeView>
 #include <QSplitter>
 #include <QStandardItemModel>
+#include <qlabel.h>
 
 PaintApplication::PaintApplication(QWidget *parent)
     : QMainWindow(parent)
@@ -35,13 +36,23 @@ PaintApplication::PaintApplication(QWidget *parent)
     splitter->setSizes(QList<int>() << 50 << 950); // Adjust the sizes as needed
 
     QHBoxLayout* layout = new QHBoxLayout; 
+
+    QLabel* label = new QLabel("Select Geometry");
+
+    label->setMaximumWidth(100);
+
+    // Set a maximum width for the buttons
+    ui.Line_Button->setMaximumWidth(40);
+    ui.Circle_Button->setMaximumWidth(40);
+    ui.Rectangle_Button->setMaximumWidth(40);
+
+    layout->addWidget(label);
     layout->addWidget(ui.Line_Button);
     layout->addWidget(ui.Circle_Button);
     layout->addWidget(ui.Rectangle_Button);
 
     QVBoxLayout* vLayout = new QVBoxLayout;
     vLayout->addLayout(layout);
-    //vLayout->addWidget(openglWindow);
     vLayout->addWidget(splitter);
    
     QWidget* centralWidget = new QWidget(this);

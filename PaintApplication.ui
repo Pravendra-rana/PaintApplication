@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
+    <width>603</width>
     <height>400</height>
    </rect>
   </property>
@@ -18,22 +18,31 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
-      <width>601</width>
-      <height>51</height>
+      <y>2</y>
+      <width>171</width>
+      <height>61</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
+     <item row="0" column="0" rowspan="2">
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QPushButton" name="Line_Button">
+        <widget class="QPushButton" name="Circle_Button">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>C:/Users/PRAVENDRA RANA/Downloads/636px-Draw-1-black-line.svg.png</normaloff>C:/Users/PRAVENDRA RANA/Downloads/636px-Draw-1-black-line.svg.png</iconset>
+           <normaloff>C:/Users/PRAVENDRA RANA/Downloads/Circle.jpg</normaloff>C:/Users/PRAVENDRA RANA/Downloads/Circle.jpg</iconset>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -48,7 +57,7 @@
          </property>
          <property name="iconSize">
           <size>
-           <width>40</width>
+           <width>30</width>
            <height>20</height>
           </size>
          </property>
@@ -58,16 +67,13 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="Circle_Button">
+        <widget class="QPushButton" name="Line_Button">
          <property name="text">
           <string/>
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>C:/Users/PRAVENDRA RANA/Downloads/Circle.jpg</normaloff>C:/Users/PRAVENDRA RANA/Downloads/Circle.jpg</iconset>
-         </property>
-         <property name="checkable">
-          <bool>false</bool>
+           <normaloff>C:/Users/PRAVENDRA RANA/Downloads/636px-Draw-1-black-line.svg.png</normaloff>C:/Users/PRAVENDRA RANA/Downloads/636px-Draw-1-black-line.svg.png</iconset>
          </property>
         </widget>
        </item>
@@ -81,7 +87,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>600</width>
+     <width>603</width>
      <height>26</height>
     </rect>
    </property>

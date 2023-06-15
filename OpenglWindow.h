@@ -29,6 +29,7 @@ public:
     static bool drawRectangleMode;
     static bool drawPolygonMode;
     static bool highlightMode;
+    static GLuint lineCount, circleCount, ractangleCount;
 
     std::vector<std::vector<float>> geometryBase;
     std::vector<std::vector<float>> highLight;
@@ -51,10 +52,6 @@ private:
     std::vector<float> lineVertices;
     std::vector<float> circleVertices;
     std::vector<float> rectangleVertices;
-
-    QMatrix4x4 projectionMatrix;
-    QMatrix4x4 modelMatrix;
-    QMatrix4x4 viewMatrix;
    
 signals:
     void lineCreated(const QString& name);
