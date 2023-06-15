@@ -4,7 +4,7 @@
 #include "ui_PaintApplication.h"
 #include "OpenglWindow.h"
 #include <QObject>
-
+#include <QTreeView>
 #include <QStandardItemModel>
 
 class PaintApplication : public QMainWindow
@@ -22,5 +22,5 @@ public:
 private:
     Ui::PaintApplicationClass ui;
     OpenGLWindow* openglWindow;
-    //QStandardItemModel* model; 
+    QTreeView* treeView; 
 };

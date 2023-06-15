@@ -27,9 +27,30 @@
      <item row="0" column="0">
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
+        <widget class="QPushButton" name="Line_Button">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>C:/Users/PRAVENDRA RANA/Downloads/636px-Draw-1-black-line.svg.png</normaloff>C:/Users/PRAVENDRA RANA/Downloads/636px-Draw-1-black-line.svg.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="Rectangle_Button">
          <property name="text">
-          <string>Rectangle</string>
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>C:/Users/PRAVENDRA RANA/Downloads/rectangle-shape-area-clip-art-pictures-of-sandboxes-a252381690ad35aa33792f02dee0c40f.png</normaloff>C:/Users/PRAVENDRA RANA/Downloads/rectangle-shape-area-clip-art-pictures-of-sandboxes-a252381690ad35aa33792f02dee0c40f.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -39,17 +60,14 @@
        <item>
         <widget class="QPushButton" name="Circle_Button">
          <property name="text">
-          <string>Circle</string>
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>C:/Users/PRAVENDRA RANA/Downloads/Circle.jpg</normaloff>C:/Users/PRAVENDRA RANA/Downloads/Circle.jpg</iconset>
          </property>
          <property name="checkable">
           <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="Line_Button">
-         <property name="text">
-          <string>Line</string>
          </property>
         </widget>
        </item>
